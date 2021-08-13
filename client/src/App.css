@@ -42,7 +42,7 @@
 }
 
 .search-section {
-  height: 30%;
+  height: 25%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,21 +54,25 @@
 .search-section input {
   width: 80%;
   height: 50px;
-  font-size: 20px;
+  font-size: 1em;
   padding-left: 10px;
+  border: none;
 }
 
 .search-section button {
-  width: 100px;
-  height: 50px;
-}
-
-.search-section button:hover {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 
 .add-section {
-  height: 60%;
+  height: 65%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -80,38 +84,31 @@
 .add-section input {
   width: 80%;
   height: 50px;
-  font-size: 20px;
+  font-size: 1em;
   padding-left: 10px;
+  border: none;
+}
+
+.add-section textarea {
+  width: 80%;
+  height: 230px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
 }
 
 .add-section button {
-  width: 100px;
-  height: 50px;
-}
-
-.add-section button:hover {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
   cursor: pointer;
 }
-/*
-.list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 95%;
-  min-height: 100px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #F9F4EE;
-  font-size: 1.2rem;
-}
-
-.list button {
-  width: 70px;
-  height: 30px;
-}
-
-.list button:hover {
-  cursor: pointer;
-}
-*/

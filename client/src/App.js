@@ -6,45 +6,44 @@ import Collapsible from './components/Collapsible'
 function App() {
 
   //'App' function component states used to store user input
-  const [name, setName] = useState("");
-  const [age, setAge] = useState(0);
-  const [country, setCountry] = useState("");
-  const [position, setPosition] = useState("");
-  const [salary, setSalary] = useState(0);
-  const [employeeList, setEmployeeList] = useState([]);
+  const [dishName, setDishName] = useState("");
+  const [dishCategory, setDishCategory] = useState("");
+  const [dishIngredients, setDishIngredients] = useState("");
+  const [dishSteps, setDishSteps] = useState("");
+
+  const [showList, setShowList] = useState([]);
   const [searchName, setSearchName] = useState("");
 
   //create; post request
-  const addEmployee = () => {
+  const addDish = () => {
     Axios.post('http://localhost:3001/create', {
-      name: name, 
-      age: age, 
-      country: country,
-      position: position,
-      salary: salary
+      name: dishName, 
+      category: dishCategory, 
+      ingredients: dishIngredients,
+      steps: dishSteps,
     }).then(() => {
-      getAllEmployees();
+      getAllDishes();
     });
   };
 
   //read; get request
-  const getAllEmployees = () => {
+  const getAllDishes = () => {
     Axios.get('http://localhost:3001/get-all').then((response) => {
-      setEmployeeList(response.data);
+      setShowList(response.data);
     });
   };
 
   //read; get request
-  const searchEmployees = (name) => {
+  const searchDishes = (name) => {
     Axios.get(`http://localhost:3001/search/${name}`).then((response) => {
-      setEmployeeList(response.data);
+      setShowList(response.data);
     });
   };
 
   //delete; delete request
-  const deleteEmployee = (id) => {
+  const deleteDish= (id) => {
     Axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
-      setEmployeeList(employeeList.filter((val) => {
+      setShowList(showList.filter((val) => {
         return val.id !== id;
       }))
     });
@@ -58,71 +57,71 @@ function App() {
         <h2>Database Application</h2>
 
         <div className="search-section">
-        <label>Search Here</label>
+        <label>Search For a Dish</label>
           <input 
             type="text"
+            placeholder="search here"
             onChange={(event) => {
               setSearchName(event.target.value);
             }}
           />
-          <button onClick={() => searchEmployees(searchName)}>Search</button>
-          <button onClick={getAllEmployees}>Show All</button>
+          <button onClick={() => searchDishes(searchName)}>Search</button>
+          <button onClick={getAllDishes}>Show All</button>
         </div>
 
         <div className="add-section">
-          <label>Name</label>
+          <label>Dish Name</label>
           <input 
             type="text" 
+            placeholder="name"
             onChange={(event) => {
-              setName(event.target.value);
+              setDishName(event.target.value);
             }}
           />
 
-          <label>Age</label>
-          <input 
-            type="number"
-            onChange={(event) => {
-              setAge(event.target.value);
-            }}
-          />
-
-          <label>Country</label>
+          <label>Category</label>
           <input 
             type="text"
+            placeholder="meat, vegetable, soup, ..."
             onChange={(event) => {
-              setCountry(event.target.value);
+              setDishCategory(event.target.value);
             }}
           />
 
-          <label>Position</label>
+          <label>Ingredients</label>
           <input 
             type="text"
+            placeholder="salt, pepper, ..."
             onChange={(event) => {
-              setPosition(event.target.value);
+              setDishIngredients(event.target.value);
             }}
           />
 
-          <label>Salary (Yearly)</label>
-          <input 
-            type="number"
+          <label>Steps</label>
+          <textarea 
+            placeholder="Write steps here..."
             onChange={(event) => {
-              setSalary(event.target.value);
+              setDishSteps(event.target.value);
             }}
           />
 
-          <button onClick={addEmployee}>Add Employee</button>
+          <button onClick={addDish}>Add Dish</button>
         </div>
       </div>
 
       <div className="container" id="right-container">
-        {employeeList.map((val, key) => {
+        {showList.map((val, key) => {
           return (
-            <Collapsible title={val.name}>
-              <p>{val.age}</p>
-              <p>{val.country}</p>
-              <p>{val.position}</p>
-              <p>Salary: ${val.salary}</p>
-              <button onClick={() => deleteEmployee(val.id)}>Delete</button>
+            <Collapsible title={val.dish_name} category={val.dish_category}>
+              <div>
+                <p>Ingredients:</p>
+                <p>{val.dish_ingredients}</p>
+              </div>
+              <div>
+                <p>Steps:</p>
+                <p>{val.dish_steps}</p>
+              </div>
+              <button onClick={() => deleteDish(val.id)}>Delete</button>
             </Collapsible>);
         })}
       </div>

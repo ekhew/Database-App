@@ -11,7 +11,7 @@ const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: 'password',
-    database: 'employee_system'
+    database: 'cookbook'
 });
 
 //create; post request route
@@ -19,15 +19,14 @@ app.post('/create', (req, res) => {
 
     //get information from the Axios post request in the client side
     const name = req.body.name;
-    const age = req.body.age;
-    const country = req.body.country;
-    const position = req.body.position;
-    const salary = req.body.salary;
+    const category= req.body.category;
+    const ingredients = req.body.ingredients;
+    const steps = req.body.steps;
 
     //database query
-    const postQuery = 'INSERT INTO employees (name, age, country, position, salary) VALUES (?,?,?,?,?)';
+    const postQuery = 'INSERT INTO dishes (dish_name, dish_category, dish_ingredients, dish_steps) VALUES (?,?,?,?)';
 
-    db.query(postQuery, [name, age, country, position, salary], (err, result) => {
+    db.query(postQuery, [name, category, ingredients, steps], (err, result) => {
             if(err) {
                 console.log(err);
             } else {
@@ -41,7 +40,7 @@ app.post('/create', (req, res) => {
 app.get('/get-all', (req, res) => {
 
     //database query
-    const getQuery = 'SELECT * FROM employees';
+    const getQuery = 'SELECT * FROM dishes';
 
     db.query(getQuery, (err, result) => {
             if(err) {
@@ -59,9 +58,9 @@ app.get('/search/:name', (req, res) => {
     const name = req.params.name;
 
     //database query
-    const getQuery = 'SELECT * FROM employees WHERE name = ?';
+    const getQuery = 'SELECT * FROM dishes WHERE dish_name REGEXP ?';
 
-    db.query(getQuery, name, (err, result) => {
+    db.query(getQuery, "^" + name, (err, result) => {
             if(err) {
                 console.log(err);
             } else {
@@ -75,7 +74,7 @@ app.get('/search/:name', (req, res) => {
 app.delete(('/delete/:id'), (req, res) => {
     const id = req.params.id;
 
-    const deleteQuery = 'DELETE FROM employees WHERE id = ?';
+    const deleteQuery = 'DELETE FROM dishes WHERE id = ?';
 
     db.query(deleteQuery, id, (err, result) => {
             if(err) {
