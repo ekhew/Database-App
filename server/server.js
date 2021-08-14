@@ -60,7 +60,7 @@ app.get('/search/:name', (req, res) => {
     //database query
     const getQuery = 'SELECT * FROM dishes WHERE dish_name REGEXP ?';
 
-    db.query(getQuery, "^" + name, (err, result) => {
+    db.query(getQuery, '^' + name, (err, result) => {
             if(err) {
                 console.log(err);
             } else {

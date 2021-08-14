@@ -113,15 +113,18 @@ function App() {
         {showList.map((val, key) => {
           return (
             <Collapsible title={val.dish_name} category={val.dish_category}>
-              <div>
-                <p>Ingredients:</p>
+              <div className="ingredients">
+                <p className="heading">Ingredients:</p>
                 <p>{val.dish_ingredients}</p>
               </div>
-              <div>
-                <p>Steps:</p>
+              <div className="steps">
+                <p className="heading">Steps:</p>
                 <p>{val.dish_steps}</p>
               </div>
-              <button onClick={() => deleteDish(val.id)}>Delete</button>
+              <div className="buttons">
+                <button id="update-btn">Update</button>
+                <button id="delete-btn" onClick={() => deleteDish(val.id)}>Delete</button>
+              </div>
             </Collapsible>);
         })}
       </div>
