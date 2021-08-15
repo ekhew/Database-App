@@ -1,0 +1,30 @@
+.whole {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100px;
+  background-color: #f9f4ee;
+  font-size: 1.2rem;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.header:hover {
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eae7e2;
+  padding: 30px;
+  height: 300px;
+}

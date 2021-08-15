@@ -74,3 +74,56 @@
   font-size: 1.1rem;
   cursor: pointer;
 }
+
+.ingredients {
+  width: 30%;
+  height: 100%;
+  overflow: auto;
+}
+
+.steps {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+}
+
+.heading {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons button {
+  width: 90px;
+}
+
+.buttons #updateBtn {
+  background-color: #5f7aff;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.buttons #deleteBtn {
+  background-color: #ec4747;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+}

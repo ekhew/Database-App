@@ -1,4 +1,4 @@
-import "./Collapsible.css";
+import styles from "../styles/Collapsible.module.css";
 import React from "react";
 
 class Collapsible extends React.Component {
@@ -16,13 +16,13 @@ class Collapsible extends React.Component {
 
   render() {
     return (
-      <div className="whole">
-        <div onClick={(e) => this.togglePanel(e)} className="header">
+      <div className={styles.whole}>
+        <div onClick={(e) => this.togglePanel(e)} className={styles.header}>
           <h4>{this.props.title}</h4>
           <p>{this.props.category}</p>
         </div>
         {this.state.open ? (
-          <div className="content">{this.props.children}</div>
+          <div className={styles.content}>{this.props.children}</div>
         ) : null}
       </div>
     );

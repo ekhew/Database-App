@@ -6,25 +6,8 @@ import Collapsible from "./Collapsible";
 
 function App() {
   //'App' function component states used to store user input
-  const [dishName, setDishName] = useState("");
-  const [dishCategory, setDishCategory] = useState("");
-  const [dishIngredients, setDishIngredients] = useState("");
-  const [dishSteps, setDishSteps] = useState("");
-
   const [showList, setShowList] = useState([]);
   const [searchName, setSearchName] = useState("");
-
-  //create; post request
-  const addDish = () => {
-    Axios.post("http://localhost:3001/create", {
-      name: dishName,
-      category: dishCategory,
-      ingredients: dishIngredients,
-      steps: dishSteps,
-    }).then(() => {
-      getAllDishes();
-    });
-  };
 
   //read; get request
   const getAllDishes = () => {
