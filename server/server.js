@@ -65,6 +65,30 @@ app.get("/search/:name", (req, res) => {
   });
 });
 
+//update; put request route
+app.put("/update", (req, res) => {
+  const id = req.body.id;
+  const name = req.body.name;
+  const category = req.body.category;
+  const ingredients = req.body.ingredients;
+  const steps = req.body.steps;
+
+  const updateQuery =
+    "UPDATE dishes SET dish_name = ?, dish_category = ?, dish_ingredients = ?, dish_steps = ? WHERE id = ?";
+
+  db.query(
+    updateQuery,
+    [name, category, ingredients, steps, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted!");
+      }
+    }
+  );
+});
+
 //delete; delete request route
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;

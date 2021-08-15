@@ -67,11 +67,5 @@ function Create() {
     </div>
   );
 }
-/*
-onChange={(event) => {
-  setDishName(event.target.value);
-}}
 
- <button onClick={addDish}>Add Dish</button>
-*/
 export default Create;

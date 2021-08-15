@@ -1,5 +1,5 @@
 import styles from "../styles/App.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Collapsible from "./Collapsible";
@@ -8,6 +8,11 @@ function App() {
   //'App' function component states used to store user input
   const [showList, setShowList] = useState([]);
   const [searchName, setSearchName] = useState("");
+
+  //displays all dishes on mount (when the page renders for the first time)
+  useEffect(() => {
+    getAllDishes();
+  }, []);
 
   //read; get request
   const getAllDishes = () => {
@@ -67,7 +72,20 @@ function App() {
                 <p>{val.dish_steps}</p>
               </div>
               <div className={styles.buttons}>
-                <button id={styles.updateBtn}>Update</button>
+                <Link
+                  to={{
+                    pathname: "/Update",
+                    state: {
+                      id: val.id,
+                      name: val.dish_name,
+                      category: val.dish_category,
+                      ingredients: val.dish_ingredients,
+                      steps: val.dish_steps,
+                    },
+                  }}
+                >
+                  <button id={styles.updateBtn}>Update</button>
+                </Link>
                 <button
                   id={styles.deleteBtn}
                   onClick={() => deleteDish(val.id)}

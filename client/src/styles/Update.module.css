@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Update {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9f4ee;
+  font-family: "Poppins", sans-serif;
+}
+
+#topContainer {
+  width: 50%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#topContainer button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#bottomContainer {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#bottomContainer input {
+  width: 80%;
+  height: 50px;
+  font-size: 1em;
+  padding-left: 10px;
+  border: none;
+}
+
+#bottomContainer textarea {
+  width: 80%;
+  height: 250px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  margin-bottom: 30px;
+}
+
+#bottomContainer button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#bottomContainer label {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 80%;
+}
