@@ -11,7 +11,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #f9f4ee;
+  background-color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -24,7 +24,7 @@
 }
 
 #topContainer button {
-  background-color: #4caf50;
+  background-color: #8000ff;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -33,6 +33,10 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 #bottomContainer {
@@ -50,6 +54,11 @@
   font-size: 1em;
   padding-left: 10px;
   border: none;
+  border-radius: 0.3em;
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 #bottomContainer textarea {
@@ -63,10 +72,15 @@
   font-size: 1rem;
   border: none;
   margin-bottom: 30px;
+  border-radius: 0.3em;
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 #bottomContainer button {
-  background-color: #4caf50;
+  background-color: #8000ff;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -75,6 +89,11 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  width: 80%;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 #bottomContainer label {

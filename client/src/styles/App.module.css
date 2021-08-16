@@ -7,11 +7,11 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #f9f4ee;
+  background-color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -22,6 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 1.5em;
 }
 
 #bottomContainer {
@@ -29,8 +30,7 @@
   height: 80%;
   display: flex;
   flex-direction: column;
-  background-color: #d7d2cb;
-  padding: 20px;
+  padding: 1.5em;
   overflow-y: auto;
 }
 
@@ -45,14 +45,19 @@
 
 .searchSection input {
   width: 70%;
-  height: 50px;
+  height: 3em;
   font-size: 1em;
   padding-left: 10px;
   border: none;
+  border-radius: 0.3em;
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .searchSection button {
-  background-color: #4caf50;
+  background-color: #8000ff;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -61,10 +66,14 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .addBtn {
-  background-color: #4caf50;
+  background-color: #8000ff;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -73,6 +82,10 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ingredients {
@@ -105,7 +118,7 @@
 }
 
 .buttons #updateBtn {
-  background-color: #5f7aff;
+  background-color: #1dda46;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -114,10 +127,14 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgb(240, 232, 255),
+    -2px -2px 12px rgba(240, 232, 255, 0.5),
+    inset 2px 2px 4px rgba(240, 232, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .buttons #deleteBtn {
-  background-color: #ec4747;
+  background-color: #fc3434;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -126,4 +143,8 @@
   display: inline-block;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 0.3em;
+  box-shadow: -2px -2px 8px rgb(240, 232, 255),
+    -2px -2px 12px rgba(240, 232, 255, 0.5),
+    inset 2px 2px 4px rgba(240, 232, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }

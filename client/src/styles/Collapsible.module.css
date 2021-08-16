@@ -1,5 +1,6 @@
 .whole {
-  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .header {
@@ -9,10 +10,11 @@
   justify-content: space-between;
   width: 100%;
   min-height: 100px;
-  background-color: #f9f4ee;
+  background-color: #ffffff;
   font-size: 1.2rem;
   padding-left: 50px;
   padding-right: 50px;
+  border-top: 1px solid rgb(187, 186, 186);
 }
 
 .header:hover {
@@ -24,7 +26,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #eae7e2;
+  background-color: #f0e8ff;
   padding: 30px;
   height: 300px;
+  margin-bottom: 40px;
+  border-radius: 0.3em;
 }

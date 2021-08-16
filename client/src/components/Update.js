@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 
 function Update(props) {
-  //'Create' function component states used to store user input
+  //'Update' function component states used to store user input
   const [dishName, setDishName] = useState(`${props.location.state.name}`);
   const [dishCategory, setDishCategory] = useState(
     `${props.location.state.category}`
@@ -27,6 +27,7 @@ function Update(props) {
     });
   };
 
+  //render into browser
   return (
     <div className={styles.Update}>
       <div id={styles.topContainer}>
