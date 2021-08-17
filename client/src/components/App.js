@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Collapsible from "./Collapsible";
+import Filter from "./Filter";
 
 function App() {
   //'App' function component states used to store user input
@@ -46,6 +47,7 @@ function App() {
         <Link to="/Create">
           <button className={styles.addBtn}>Create New</button>
         </Link>
+        <Filter title="Filter Dishes"></Filter>
         <div className={styles.searchSection}>
           <input
             type="text"

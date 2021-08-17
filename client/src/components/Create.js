@@ -18,7 +18,7 @@ function Create() {
       ingredients: dishIngredients,
       steps: dishSteps,
     }).then(() => {
-      alert("Dish successfully added!");
+      alert("Dish successfully created!");
     });
   };
 
@@ -63,7 +63,7 @@ function Create() {
             setDishSteps(event.target.value);
           }}
         />
-        <button onClick={addDish}>Add Dish</button>
+        <button onClick={addDish}>Done</button>
       </div>
     </div>
   );

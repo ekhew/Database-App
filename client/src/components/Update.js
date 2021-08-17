@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 
 function Update(props) {
-  //'Update' function component states used to store user input
+  //'Update' function component states used to store user input; initial values are passed in from the 'App' component
   const [dishName, setDishName] = useState(`${props.location.state.name}`);
   const [dishCategory, setDishCategory] = useState(
     `${props.location.state.category}`
@@ -68,7 +68,7 @@ function Update(props) {
             setDishSteps(event.target.value);
           }}
         />
-        <button onClick={updateDish}>Update</button>
+        <button onClick={updateDish}>Save</button>
       </div>
     </div>
   );
