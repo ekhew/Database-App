@@ -42,11 +42,13 @@ function App() {
   };
 
   //shows filtered list of dishes
-  const getFilteredDishes = () => {
-    Axios.get("http://localhost:3001/get-filtered").then((response) => {
+  useEffect(() => {
+    Axios.get("http://localhost:3001/get-filtered", {
+      params: { filteredCategories: filteredCategories },
+    }).then((response) => {
       setShowList(response.data);
     });
-  };
+  }, [filteredCategories]);
 
   //render into browser
   return (
@@ -58,7 +60,6 @@ function App() {
         <Filter
           title="Filter Dishes"
           setFilteredCategories={setFilteredCategories}
-          getFilteredDishes={getAllDishes}
         ></Filter>
         <div className={styles.searchSection}>
           <input

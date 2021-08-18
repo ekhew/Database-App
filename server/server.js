@@ -104,6 +104,24 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
+//read; get request route
+app.get("/get-filtered", (req, res) => {
+  const array = req.query.filteredCategories;
+
+  console.log(array);
+  /*
+  const filterQuery = "SELECT * FROM dishes WHERE dish_category IN (?)";
+
+  db.query(filterQuery, array, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+  */
+});
+
 app.listen(3001, () => {
   console.log("Server is listening on port 3001.");
 });
