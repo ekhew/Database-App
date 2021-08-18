@@ -9,6 +9,7 @@ function App() {
   //'App' function component states used to store user input
   const [showList, setShowList] = useState([]);
   const [searchName, setSearchName] = useState("");
+  const [filteredCategories, setFilteredCategories] = useState([]); //array of filtered categories from the 'Filter' component
 
   //displays all dishes on mount (when the page renders for the first time)
   useEffect(() => {
@@ -40,6 +41,13 @@ function App() {
     });
   };
 
+  //shows filtered list of dishes
+  const getFilteredDishes = () => {
+    Axios.get("http://localhost:3001/get-filtered").then((response) => {
+      setShowList(response.data);
+    });
+  };
+
   //render into browser
   return (
     <div className={styles.App}>
@@ -47,7 +55,11 @@ function App() {
         <Link to="/Create">
           <button className={styles.addBtn}>Create New</button>
         </Link>
-        <Filter title="Filter Dishes"></Filter>
+        <Filter
+          title="Filter Dishes"
+          setFilteredCategories={setFilteredCategories}
+          getFilteredDishes={getAllDishes}
+        ></Filter>
         <div className={styles.searchSection}>
           <input
             type="text"
