@@ -10,7 +10,7 @@ function Create() {
   const [dishIngredients, setDishIngredients] = useState("");
   const [dishSteps, setDishSteps] = useState("");
 
-  //create; post request
+  //create; post request; creating a new dish
   const addDish = () => {
     Axios.post("http://localhost:3001/create", {
       name: dishName,
@@ -22,7 +22,7 @@ function Create() {
     });
   };
 
-  //render into browser
+  //render component into browser
   return (
     <div className={styles.Create}>
       <div id={styles.topContainer}>

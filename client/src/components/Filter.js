@@ -4,10 +4,12 @@ import React from "react";
 class Filter extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       open: false,
       filteredList: [],
     };
+
     this.togglePanel = this.togglePanel.bind(this);
     this.setFilteredList = this.setFilteredList.bind(this);
   }
@@ -30,11 +32,6 @@ class Filter extends React.Component {
       this.state.filteredList.splice(index, 1);
       this.setState({ filteredList: this.state.filteredList });
     }
-  }
-
-  //prints the current array in the 'filteredList' state
-  printArr() {
-    console.log(this.state.filteredList);
   }
 
   //clears the array in the 'filteredList' state
@@ -87,7 +84,6 @@ class Filter extends React.Component {
               <button
                 onClick={(e) => {
                   this.props.setFilteredCategories(this.state.filteredList);
-                  //this.printArr();
                   this.clearArr();
                   this.togglePanel(e);
                 }}

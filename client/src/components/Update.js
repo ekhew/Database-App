@@ -14,7 +14,7 @@ function Update(props) {
   );
   const [dishSteps, setDishSteps] = useState(`${props.location.state.steps}`);
 
-  //update; put request
+  //update; put request; update a dish
   const updateDish = () => {
     Axios.put("http://localhost:3001/update", {
       id: props.location.state.id,
@@ -27,7 +27,7 @@ function Update(props) {
     });
   };
 
-  //render into browser
+  //render component into browser
   return (
     <div className={styles.Update}>
       <div id={styles.topContainer}>

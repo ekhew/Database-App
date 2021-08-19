@@ -4,16 +4,20 @@ import React from "react";
 class Collapsible extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       open: false,
     };
+
     this.togglePanel = this.togglePanel.bind(this);
   }
 
+  //function used to toggle the content panel
   togglePanel(e) {
     this.setState({ open: !this.state.open });
   }
 
+  //render component into browser
   render() {
     return (
       <div className={styles.whole}>

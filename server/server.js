@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   database: "cookbook",
 });
 
-//create; post request route
+//create; post request route; creating a new dish
 app.post("/create", (req, res) => {
   //get information from the Axios post request in the client side
   const name = req.body.name;
@@ -35,7 +35,7 @@ app.post("/create", (req, res) => {
   });
 });
 
-//read; get request route
+//read; get request route; display all dishes
 app.get("/get-all", (req, res) => {
   //database query
   const getQuery = "SELECT * FROM dishes";
@@ -49,7 +49,7 @@ app.get("/get-all", (req, res) => {
   });
 });
 
-//read; get request route
+//read; get request route; display searched dishes
 app.get("/search/:name", (req, res) => {
   const name = req.params.name;
 
@@ -65,7 +65,7 @@ app.get("/search/:name", (req, res) => {
   });
 });
 
-//update; put request route
+//update; put request route; update a dish
 app.put("/update", (req, res) => {
   const id = req.body.id;
   const name = req.body.name;
@@ -89,7 +89,7 @@ app.put("/update", (req, res) => {
   );
 });
 
-//delete; delete request route
+//delete; delete request route; delete a dish
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
 
@@ -104,22 +104,21 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-//read; get request route
+//read; get request route; display filtered dishes
 app.get("/get-filtered", (req, res) => {
-  const array = req.query.filteredCategories;
+  //array of filtered categories passed from the 'App' component
+  const filteredCategories = req.query.filteredCategories;
 
-  console.log(array);
-  /*
+  //database query
   const filterQuery = "SELECT * FROM dishes WHERE dish_category IN (?)";
 
-  db.query(filterQuery, array, (err, result) => {
+  db.query(filterQuery, [filteredCategories], (err, result) => {
     if (err) {
       console.log(err);
     } else {
       res.send(result);
     }
   });
-  */
 });
 
 app.listen(3001, () => {

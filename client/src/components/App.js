@@ -9,37 +9,7 @@ function App() {
   //'App' function component states used to store user input
   const [showList, setShowList] = useState([]);
   const [searchName, setSearchName] = useState("");
-  const [filteredCategories, setFilteredCategories] = useState([]); //array of filtered categories from the 'Filter' component
-
-  //displays all dishes on mount (when the page renders for the first time)
-  useEffect(() => {
-    getAllDishes();
-  }, []);
-
-  //read; get request
-  const getAllDishes = () => {
-    Axios.get("http://localhost:3001/get-all").then((response) => {
-      setShowList(response.data);
-    });
-  };
-
-  //read; get request
-  const searchDishes = (name) => {
-    Axios.get(`http://localhost:3001/search/${name}`).then((response) => {
-      setShowList(response.data);
-    });
-  };
-
-  //delete; delete request
-  const deleteDish = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
-      setShowList(
-        showList.filter((val) => {
-          return val.id !== id;
-        })
-      );
-    });
-  };
+  const [filteredCategories, setFilteredCategories] = useState([]); //is modified by the 'Filter' component
 
   //shows filtered list of dishes
   useEffect(() => {
@@ -50,7 +20,37 @@ function App() {
     });
   }, [filteredCategories]);
 
-  //render into browser
+  //displays all dishes on mount (when the page renders for the first time)
+  useEffect(() => {
+    getAllDishes();
+  }, []);
+
+  //read; get request; display all dishes
+  const getAllDishes = () => {
+    Axios.get("http://localhost:3001/get-all").then((response) => {
+      setShowList(response.data);
+    });
+  };
+
+  //read; get request; display searched dishes
+  const searchDishes = (name) => {
+    Axios.get(`http://localhost:3001/search/${name}`).then((response) => {
+      setShowList(response.data);
+    });
+  };
+
+  //delete; delete request; delete a dish
+  const deleteDish = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
+      setShowList(
+        showList.filter((val) => {
+          return val.id !== id;
+        })
+      );
+    });
+  };
+
+  //render component into browser
   return (
     <div className={styles.App}>
       <div id={styles.topContainer}>
