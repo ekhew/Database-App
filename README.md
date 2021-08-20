@@ -13,3 +13,4 @@ My main motivation for creating this web app was to learn a tech stack. The tech
 - Search for specific dishes (can search using prefixes, i.e. searching "ste" will show "steamed chicken" and "stew").
 - Update information of an existing dish.
 - Delete an exisiting dish from the database.
+- Filter shown dishes by category.

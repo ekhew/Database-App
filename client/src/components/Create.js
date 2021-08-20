@@ -12,14 +12,24 @@ function Create() {
 
   //create; post request; creating a new dish
   const addDish = () => {
-    Axios.post("http://localhost:3001/create", {
-      name: dishName,
-      category: dishCategory,
-      ingredients: dishIngredients,
-      steps: dishSteps,
-    }).then(() => {
-      alert("Dish successfully created!");
-    });
+    //only send a request if every input has been filled
+    if (
+      dishName !== "" &&
+      dishCategory !== "" &&
+      dishIngredients !== "" &&
+      dishSteps !== ""
+    ) {
+      Axios.post("http://localhost:3001/create", {
+        name: dishName,
+        category: dishCategory,
+        ingredients: dishIngredients,
+        steps: dishSteps,
+      }).then(() => {
+        alert("Dish successfully created!");
+      });
+    } else {
+      alert("Error! Please fill in every input.");
+    }
   };
 
   //render component into browser

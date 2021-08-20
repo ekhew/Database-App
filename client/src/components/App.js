@@ -13,11 +13,14 @@ function App() {
 
   //shows filtered list of dishes
   useEffect(() => {
-    Axios.get("http://localhost:3001/get-filtered", {
-      params: { filteredCategories: filteredCategories },
-    }).then((response) => {
-      setShowList(response.data);
-    });
+    //only send a request if the array is not empty (at least one category selected)
+    if (filteredCategories.length !== 0) {
+      Axios.get("http://localhost:3001/get-filtered", {
+        params: { filteredCategories: filteredCategories },
+      }).then((response) => {
+        setShowList(response.data);
+      });
+    }
   }, [filteredCategories]);
 
   //displays all dishes on mount (when the page renders for the first time)
