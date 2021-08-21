@@ -110,9 +110,9 @@ app.get("/get-filtered", (req, res) => {
   const filteredCategories = req.query.filteredCategories;
 
   //database query
-  const filterQuery = "SELECT * FROM dishes WHERE dish_category IN (?)";
+  const filterQuery = "SELECT * FROM dishes WHERE dish_category REGEXP (?)";
 
-  db.query(filterQuery, [filteredCategories], (err, result) => {
+  db.query(filterQuery, filteredCategories, (err, result) => {
     if (err) {
       console.log(err);
     } else {

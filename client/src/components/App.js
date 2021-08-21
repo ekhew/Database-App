@@ -13,10 +13,12 @@ function App() {
 
   //shows filtered list of dishes
   useEffect(() => {
+    console.log(filteredCategories);
     //only send a request if the array is not empty (at least one category selected)
     if (filteredCategories.length !== 0) {
+      const queryString = filteredCategories.join("|") + "?"; //convert the array into a regular expression (REGEXP) that can be used in the query on the server side
       Axios.get("http://localhost:3001/get-filtered", {
-        params: { filteredCategories: filteredCategories },
+        params: { filteredCategories: queryString },
       }).then((response) => {
         setShowList(response.data);
       });
