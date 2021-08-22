@@ -13,7 +13,6 @@ function App() {
 
   //shows filtered list of dishes
   useEffect(() => {
-    console.log(filteredCategories);
     //only send a request if the array is not empty (at least one category selected)
     if (filteredCategories.length !== 0) {
       const queryString = filteredCategories.join("|") + "?"; //convert the array into a regular expression (REGEXP) that can be used in the query on the server side
@@ -39,20 +38,30 @@ function App() {
 
   //read; get request; display searched dishes
   const searchDishes = (name) => {
-    Axios.get(`http://localhost:3001/search/${name}`).then((response) => {
-      setShowList(response.data);
-    });
+    //only search when there is user input
+    if (name !== "") {
+      Axios.get(`http://localhost:3001/search/${name}`).then((response) => {
+        setShowList(response.data);
+      });
+    }
   };
 
   //delete; delete request; delete a dish
   const deleteDish = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
-      setShowList(
-        showList.filter((val) => {
-          return val.id !== id;
-        })
-      );
-    });
+    //pop-up asking the user to confirm deletion of dish
+    const confirm = window.confirm(
+      "Are you sure you want to delete this dish?"
+    );
+    //only proceed to delete dish if the user confirmed
+    if (confirm) {
+      Axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
+        setShowList(
+          showList.filter((val) => {
+            return val.id !== id;
+          })
+        );
+      });
+    }
   };
 
   //render component into browser
@@ -80,16 +89,16 @@ function App() {
       </div>
 
       <div id={styles.bottomContainer}>
-        {showList.map((val, key) => {
+        {showList.map((val) => {
           return (
             <Collapsible title={val.dish_name} category={val.dish_category}>
               <div className={styles.ingredients}>
                 <p className={styles.heading}>Ingredients:</p>
-                <p>{val.dish_ingredients}</p>
+                <p className={styles.ingredientsText}>{val.dish_ingredients}</p>
               </div>
               <div className={styles.steps}>
                 <p className={styles.heading}>Steps:</p>
-                <p>{val.dish_steps}</p>
+                <p className={styles.stepsText}>{val.dish_steps}</p>
               </div>
               <div className={styles.buttons}>
                 <Link

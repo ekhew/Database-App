@@ -53,15 +53,15 @@ function Create() {
         <label>Category:</label>
         <input
           type="text"
-          placeholder="meat, vegetable, soup, ..."
+          placeholder="Meat, Vegetable, Soup, Other"
           onChange={(event) => {
             setDishCategory(event.target.value);
           }}
         />
         <label>Ingredients:</label>
-        <input
+        <textarea
           type="text"
-          placeholder="salt, pepper, ..."
+          placeholder="List ingredients here..."
           onChange={(event) => {
             setDishIngredients(event.target.value);
           }}

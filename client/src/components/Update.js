@@ -54,7 +54,7 @@ function Update(props) {
           }}
         />
         <label>Ingredients:</label>
-        <input
+        <textarea
           type="text"
           defaultValue={props.location.state.ingredients}
           onChange={(event) => {
