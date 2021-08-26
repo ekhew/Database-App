@@ -1,6 +1,7 @@
 import styles from "../styles/Filter.module.css";
 import React from "react";
 
+//filter menu
 class Filter extends React.Component {
   constructor(props) {
     super(props);

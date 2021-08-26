@@ -1,6 +1,7 @@
 import styles from "../styles/Collapsible.module.css";
 import React from "react";
 
+//collapsible component used to display dish information on the main page
 class Collapsible extends React.Component {
   constructor(props) {
     super(props);

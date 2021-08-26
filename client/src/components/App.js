@@ -5,6 +5,7 @@ import Axios from "axios";
 import Collapsible from "./Collapsible";
 import Filter from "./Filter";
 
+//main page
 function App() {
   //'App' function component states used to store user input
   const [showList, setShowList] = useState([]);

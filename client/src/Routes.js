@@ -3,6 +3,7 @@ import App from "./components/App";
 import Create from "./components/Create";
 import Update from "./components/Update";
 
+//used to create multi-page React apps
 function Routes() {
   return (
     <BrowserRouter>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
+//"create a new dish" page
 function Create() {
   //'Create' function component states used to store user input
   const [dishName, setDishName] = useState("");

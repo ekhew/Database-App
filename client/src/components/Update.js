@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
+//"update a dish" page
 function Update(props) {
   //'Update' function component states used to store user input; initial values are passed in from the 'App' component
   const [dishName, setDishName] = useState(`${props.location.state.name}`);
