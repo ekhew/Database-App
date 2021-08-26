@@ -15,16 +15,16 @@ My main motivation for creating this web app was to learn a tech stack. The tech
 - Delete an exisiting dish from the database.
 - Filter shown dishes by category.
 
-![Screenshot (173)](https://user-images.githubusercontent.com/56172352/130896303-261fa41e-5226-4f60-8ab8-b44a00ff44f1.png)
+![Screenshot (173)](https://user-images.githubusercontent.com/56172352/130896800-b3671554-557b-435b-b960-97b985725023.png)
 
-![Screenshot (174)](https://user-images.githubusercontent.com/56172352/130896318-86a54ac1-49e7-4d00-9799-74ee48efe51e.png)
+![Screenshot (174)](https://user-images.githubusercontent.com/56172352/130896814-0717133f-47b4-4c52-9ece-402264706c8f.png)
 
-![Screenshot (175)](https://user-images.githubusercontent.com/56172352/130896329-5970099f-1fc4-46d7-9d4f-9782e18288af.png)
+![Screenshot (175)](https://user-images.githubusercontent.com/56172352/130896839-cc88aa31-272d-4430-8359-f7b7942376eb.png)
 
-![Screenshot (176)](https://user-images.githubusercontent.com/56172352/130896334-e0544174-3140-44c4-9f0d-de7914ad34cc.png)
+![Screenshot (176)](https://user-images.githubusercontent.com/56172352/130896845-e1a96dc8-01f9-4028-ada2-c57b73b7f65d.png)
 
-![Screenshot (177)](https://user-images.githubusercontent.com/56172352/130896339-7fdfc41b-0913-4846-a244-95f5d83d12d2.png)
+![Screenshot (177)](https://user-images.githubusercontent.com/56172352/130896850-68673de2-971c-4a4e-aa48-114b0fb9cd5a.png)
 
-![Screenshot (178)](https://user-images.githubusercontent.com/56172352/130896346-7c4a6d88-74bb-450b-a300-bc64ceda199e.png)
+![Screenshot (178)](https://user-images.githubusercontent.com/56172352/130896852-2ab0d7d4-22bf-45ec-b931-1d65fbf23c30.png)
 
-![Screenshot (179)](https://user-images.githubusercontent.com/56172352/130896350-d9b8160a-dcc9-44a4-8d3f-9893b0fd1ed0.png)
+![Screenshot (179)](https://user-images.githubusercontent.com/56172352/130896855-6c3309a9-2b02-447e-8158-a12c007d8c25.png)
