@@ -1,4 +1,4 @@
-# Recipe Book App
+# Mom's Recipe Book
 
 This is a web app that acts as a recipe book. A database is used to store information about dishes. Users can create new dishes, update dishes, delete dishes, or search for dishes.
 
